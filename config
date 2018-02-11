@@ -233,3 +233,9 @@ bar {
 
 exec_always compton -f -D 1
 
+# Screenshots
+
+# scrot
+bindsym Print exec scrot -e 'mv $f /home/andres/Pictures/'
+# scrot select window or rectangle
+bindsym Mod1+Print exec scrot -s -e 'mv $f /home/andres/Pictures'
