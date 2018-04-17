@@ -53,7 +53,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 1960 -padding 450 -opacity "80" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 2 -font "System San Francisco Display 14" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -fullscreen -padding 450 -opacity "80" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 1 -font "System San Francisco Display 14" -hlfg "#9575cd"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -111,10 +111,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspaces
-set $workspace1 "1: Terminal "
-set $workspace2 "2: Chrome "
-set $workspace9 "9: Media "
-set $workspace10 "10: Spotify "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -139,12 +139,6 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
-
-# start windows in specific workspaces
-
-assign [class="Google-chrome"] $workspace2
-assign [class="vlc"] $workspace9
-for_window [class="Spotify"] move to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -202,7 +196,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioStop exec playerctl stop
 
-exec_always feh --bg-scale /home/andres/Pictures/wallhaven-401628.jpg 
+exec_always feh --bg-scale /home/andres/Pictures/wallhaven-621402.jpg 
 
 # Window Colours          border  background text    indicator
   client.focused          $base01 $base01    $base07 $base0F
@@ -213,7 +207,7 @@ exec_always feh --bg-scale /home/andres/Pictures/wallhaven-401628.jpg
 hide_edge_borders both
 
 bar {
-        status_command i3blocks -c /home/andres/.config/i3/i3blocks.conf
+        status_command i3blocks -c /home/andres/.i3/i3blocks.conf
 	font pango: System San Francisco Display, FontAwesome 10
         position top
         strip_workspace_numbers yes
@@ -239,3 +233,6 @@ exec_always compton -f -D 1
 bindsym Print exec scrot -e 'mv $f /home/andres/Pictures/'
 # scrot select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /home/andres/Pictures'
+exec gnome-settings-daemon
+exec --no-startup-id nm-applet
+exect xrandr --output eDP-1 --auto --output DP-1 --auto --left-of eDP-1
