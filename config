@@ -236,3 +236,5 @@ bindsym Mod1+Print exec scrot -s -e 'mv $f /home/andres/Pictures'
 exec gnome-settings-daemon
 exec --no-startup-id nm-applet
 exect xrandr --output eDP-1 --auto --output DP-1 --auto --left-of eDP-1
+gaps inner 5
+gaps outer 5
