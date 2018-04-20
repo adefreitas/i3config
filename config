@@ -196,7 +196,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioStop exec playerctl stop
 
-exec_always feh --bg-scale /home/andres/Pictures/wallhaven-621402.jpg 
+exec_always feh --bg-scale /home/andres/Pictures/wallhaven-618670.jpg 
 
 # Window Colours          border  background text    indicator
   client.focused          $base01 $base01    $base07 $base0F
@@ -230,9 +230,9 @@ exec_always compton -f -D 1
 # Screenshots
 
 # scrot
-bindsym Print exec scrot -e 'mv $f /home/andres/Pictures/'
+bindsym --release Print exec "scrot -e 'mv $f /home/andres/Pictures/'"
 # scrot select window or rectangle
-bindsym Mod1+Print exec scrot -s -e 'mv $f /home/andres/Pictures'
+bindsym --release Shift+Print exec "scrot -s -e 'mv $f /home/andres/Pictures'"
 exec gnome-settings-daemon
 exec --no-startup-id nm-applet
 exect xrandr --output eDP-1 --auto --output DP-1 --auto --left-of eDP-1
