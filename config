@@ -225,7 +225,7 @@ bar {
     }
 }
 
-exec_always --no-startup-id compton -f -D 1 --backend glx --vsync opengl-swc
+exec_always --no-startup-id compton -f -D 1
 
 # Screenshots
 
